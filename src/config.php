@@ -15,6 +15,7 @@ return [
             Plugins\ExternalLinks::class,
             Plugins\FootNote::class,
             Plugins\FrontMatter::class,
+            Plugins\HeadingPermalinks::class,
             Plugins\Mentions::class,
             Plugins\TaskList::class,
         ],
