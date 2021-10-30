@@ -1,2 +1,2 @@
-- github:authanram
-- twitter:authanram
+github/authanram
+twitter/authanram
