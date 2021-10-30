@@ -1,0 +1,36 @@
+{
+    "name": "authanram/markdown",
+    "type": "package",
+    "description": "...",
+    "license": "MIT",
+    "require": {
+        "php": "^8.0",
+        "league/commonmark": "^2.0.2",
+        "symfony/yaml": "^5.3.6",
+        "webmozart/assert": "^1.10.0"
+    },
+    "require-dev": {
+        "nunomaduro/phpinsights": "^2.0.1",
+        "pestphp/pest": "^1.20.0",
+        "pestphp/pest-plugin-mock": "^1.0.3",
+        "pestphp/pest-plugin-watch": "1.x-dev",
+        "spatie/ray": "^1.30.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Authanram\\Markdown\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Authanram\\Markdown\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
