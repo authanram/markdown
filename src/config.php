@@ -6,16 +6,18 @@ use Authanram\Markdown\Plugins;
 
 return [
 
-    'base_url' => 'https://docs.test/docs',
+    'converter' => [
+        'base_url' => 'https://docs.test/docs',
 
-    'plugins' => [
-        Plugins\AutoLinks::class,
-        Plugins\DefaultAttributes::class,
-        Plugins\ExternalLinks::class,
-        Plugins\FootNote::class,
-        Plugins\FrontMatter::class,
-        Plugins\Mentions::class,
-        Plugins\TaskList::class,
+        'plugins' => [
+            Plugins\AutoLinks::class,
+            Plugins\DefaultAttributes::class,
+            Plugins\ExternalLinks::class,
+            Plugins\FootNote::class,
+            Plugins\FrontMatter::class,
+            Plugins\Mentions::class,
+            Plugins\TaskList::class,
+        ],
     ],
 
     'renderer' => [

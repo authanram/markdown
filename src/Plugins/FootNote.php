@@ -12,18 +12,18 @@ class FootNote extends Plugin
 {
     public static function config(array $config): array
     {
-        $config['footnote'] = [
-            'backref_class' => 'footnote-backref',
-            'backref_symbol' => '↩',
-            'container_add_hr' => true,
-            'container_class' => 'footnotes',
-            'ref_class' => 'footnote-ref',
-            'ref_id_prefix' => 'fnref:',
-            'footnote_class' => 'footnote',
-            'footnote_id_prefix' => 'fn:',
+        return [
+            'footnote' => [
+                'backref_class' => 'footnote-backref',
+                'backref_symbol' => '↩',
+                'container_add_hr' => true,
+                'container_class' => 'footnotes',
+                'ref_class' => 'footnote-ref',
+                'ref_id_prefix' => 'fnref:',
+                'footnote_class' => 'footnote',
+                'footnote_id_prefix' => 'fn:',
+            ],
         ];
-
-        return $config;
     }
 
     public static function extension(): ExtensionInterface

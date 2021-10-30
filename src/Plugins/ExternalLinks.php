@@ -12,16 +12,16 @@ class ExternalLinks extends Plugin
 {
     public static function config(array $config): array
     {
-        $config['external_link'] = [
-            'internal_hosts' => static::getHost($config),
-            'open_in_new_window' => false,
-            'html_class' => 'external-link',
-            'nofollow' => '',
-            'noopener' => 'external',
-            'noreferrer' => 'external',
+        return [
+            'external_link' => [
+                'internal_hosts' => static::getHost($config),
+                'open_in_new_window' => false,
+                'html_class' => 'external-link',
+                'nofollow' => '',
+                'noopener' => 'external',
+                'noreferrer' => 'external',
+            ],
         ];
-
-        return $config;
     }
 
     public static function extension(): ExtensionInterface

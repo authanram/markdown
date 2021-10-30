@@ -12,20 +12,20 @@ class Mentions extends Plugin
 {
     public static function config(array $config): array
     {
-        $config['mentions'] = [
-            'github_handle' => [
-                'prefix'    => '@',
-                'pattern'   => '[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}(?!\w)',
-                'generator' => 'https://github.com/%s',
-            ],
-            'twitter_handle' => [
-                'prefix'    => '@',
-                'pattern'   => '[A-Za-z0-9_]{1,15}(?!\w)',
-                'generator' => 'https://twitter.com/%s',
+        return [
+            'mentions' => [
+                'github_handle' => [
+                    'prefix'    => '@',
+                    'pattern'   => '[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}(?!\w)',
+                    'generator' => 'https://github.com/%s',
+                ],
+                'twitter_handle' => [
+                    'prefix'    => '#',
+                    'pattern'   => '[A-Za-z0-9_]{1,15}(?!\w)',
+                    'generator' => 'https://twitter.com/%s',
+                ],
             ],
         ];
-
-        return $config;
     }
 
     public static function extension(): ExtensionInterface

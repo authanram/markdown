@@ -5,32 +5,19 @@ declare(strict_types=1);
 use Authanram\Markdown\Converter;
 
 $config = require __DIR__.'/../../src/config.php';
-
-$markdown = <<<MD
----
-index:
-    First:
-        first-link: First Link
-        second-link: Second Link
-    Second:
-        third-link: Third Link 
-        fourth-link: Fourth Link
----
- 
-# Document Headline
-MD;
+$markdown = file_get_contents(__DIR__.'/../TestFiles/front-matter.md');
 
 beforeEach(function () use ($config) {
     $this->config = $config;
 });
 
 it('...', function () use ($markdown) {
-    $document = (new Converter($this->config))->with($markdown);
+    $converter = new Converter($markdown, $this->config);
 
-    dump($document->getDocument());
-    dump($document->getFrontMatter());
-    dump($document->getHtml());
-    dump($document->getIndex());
+//    dump($converter->getDocument());
+//    dump($converter->getFrontMatter());
+    dump($converter->getIndex());
+    dump($converter->toHtml());
 
     expect(true)->toBeTrue();
 });

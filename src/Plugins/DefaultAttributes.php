@@ -18,29 +18,29 @@ class DefaultAttributes extends Plugin
 {
     public static function config(array $config): array
     {
-        $config['default_attributes'] = [
-//            Heading::class => [
-//                'class' => static function (Heading $node) {
-//                    if ($node->getLevel() === 1) {
-//                        return 'title-main';
-//                    }
+        return [
+            'default_attributes' => [
+//                Heading::class => [
+//                    'class' => static function (Heading $node) {
+//                        if ($node->getLevel() === 1) {
+//                            return 'title-main';
+//                        }
 //
-//                    return null;
-//                },
-//            ],
-//            Table::class => [
-//                'class' => 'table',
-//            ],
-//            Paragraph::class => [
-//                'class' => ['text-center', 'font-comic-sans'],
-//            ],
-//            Link::class => [
-//                'class' => 'btn btn-link',
-//                'target' => '_blank',
-//            ],
+//                        return null;
+//                    },
+//                ],
+//                Table::class => [
+//                    'class' => 'table',
+//                ],
+//                Paragraph::class => [
+//                    'class' => ['text-center', 'font-comic-sans'],
+//                ],
+//                Link::class => [
+//                    'class' => 'btn btn-link',
+//                    'target' => '_blank',
+//                ],
+            ],
         ];
-
-        return $config;
     }
 
     public static function extension(): ExtensionInterface
