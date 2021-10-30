@@ -1,5 +1,3 @@
-Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia
-odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Morbi[^note1] leo risus, porta ac consectetur ac.
+Morbi[^note1] leo risus.
 
-[^note1]: Elit Malesuada Ridiculus
+[^note1]: Elit

@@ -8,7 +8,7 @@ use Authanram\Markdown\Plugin;
 use League\CommonMark\Extension\DefaultAttributes\DefaultAttributesExtension;
 use League\CommonMark\Extension\ExtensionInterface;
 
-//use League\CommonMark\Extension\CommonMark\Node\Block\Heading;
+use League\CommonMark\Extension\CommonMark\Node\Block\Heading;
 //use League\CommonMark\Extension\CommonMark\Node\Inline\Link;
 //use League\CommonMark\Extension\Table\Table;
 //use League\CommonMark\Node\Block\Paragraph;
@@ -20,15 +20,9 @@ class DefaultAttributes extends Plugin
     {
         return [
             'default_attributes' => [
-//                Heading::class => [
-//                    'class' => static function (Heading $node) {
-//                        if ($node->getLevel() === 1) {
-//                            return 'title-main';
-//                        }
-//
-//                        return null;
-//                    },
-//                ],
+                Heading::class => [
+                    'class' => 'heading',
+                ],
 //                Table::class => [
 //                    'class' => 'table',
 //                ],

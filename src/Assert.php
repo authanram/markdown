@@ -10,10 +10,12 @@ class Assert extends \Webmozart\Assert\Assert
 {
     public static function url(
         string $subject,
-        string $message = '%s expected to be a url.',
-    ): void {
+        string $message = 'Expected url, got: "%s".',
+    ): bool {
         filter_var($subject, FILTER_VALIDATE_URL) === false
             ? throw new InvalidArgumentException(sprintf($message, $subject))
             : null;
+
+        return true;
     }
 }

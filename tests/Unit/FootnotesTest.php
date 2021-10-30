@@ -7,5 +7,8 @@ beforeEach(function () {
 });
 
 it('renders footnotes', function () {
-    expect(true)->toBeTrue();
+    $footnote = '<a class="footnote-backref" rev="footnote" href="#fnref:note1"'
+        .' role="doc-backlink">↩</a>';
+
+    expect($this->converter->toHtml())->toContain($footnote);
 });

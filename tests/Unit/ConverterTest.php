@@ -21,14 +21,12 @@ it('resolves front matter', function () {
     expect($frontMatter)->toBeArray();
 });
 
-
 it('resolves the index from font matter', function () {
     $index = $this->converter->getIndex();
 
     expect($index)->not()->toBeEmpty();
     expect($index)->toBeArray();
 });
-
 
 it('converts to html', function () {
     $html = $this->converter->toHtml();
