@@ -8,10 +8,6 @@ index:
         fourth-link: Fourth Link
 ---
 
-# Document Headline
+# Document
 
-www.gooogle.com
-
-Follow me on GitHub: @authanram
-
-foox
+...

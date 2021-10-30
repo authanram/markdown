@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Authanram\Markdown;
 
+use Generator;
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\Environment\EnvironmentBuilderInterface;
 use League\CommonMark\Environment\EnvironmentInterface;
@@ -11,6 +12,7 @@ use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\Extension\FrontMatter\Output\RenderedContentWithFrontMatter as WithFrontMatter;
 use League\CommonMark\MarkdownConverter;
 use League\CommonMark\Node\Block\Document;
+use League\CommonMark\Node\Query;
 use League\CommonMark\Output\RenderedContentInterface;
 
 class Converter extends MarkdownConverter
@@ -60,6 +62,16 @@ class Converter extends MarkdownConverter
     public function toHtml(): string
     {
         return $this->renderedContent->getContent();
+    }
+
+    public function query(): Query
+    {
+        return new Query;
+    }
+
+    public function map(Generator $iterator, callable $callback)
+    {
+        return array_map($callback, iterator_to_array($iterator));
     }
 
     /**
