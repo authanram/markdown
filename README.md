@@ -1,5 +1,5 @@
 # Markdown
 
-Work in progress.
+[WIP] Converts markdown into HTML.
 
 ...
