@@ -10,6 +10,8 @@ return [
         'base_url' => 'https://docs.test/docs',
 
         'plugins' => [
+            Plugins\AttributesMap::class,
+            Plugins\AutoLinks::class,
             Plugins\AutoLinks::class,
             Plugins\DefaultAttributes::class,
             Plugins\ExternalLinks::class,
