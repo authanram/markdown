@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Authanram\Markdown\Extensions\AttributesMap;
 
 use League\CommonMark\Event\DocumentParsedEvent;
-use League\CommonMark\Node\Query;
 use League\Config\ConfigurationAwareInterface;
 use League\Config\ConfigurationInterface;
 
@@ -21,11 +20,13 @@ final class ApplyAttributesMapProcessor implements ConfigurationAwareInterface
             return;
         }
 
-        //(new Query)->where();
-
-        //dump($event->getDocument()->firstChild());
-
-        $event->getDocument();
+//        $walker = $event->getDocument()->walker();
+//
+//        /** @noinspection CallableParameterUseCaseInTypeContextInspection */
+//        while ($event = $walker->next()) {
+//            $event->isEntering();
+//            $event->getNode();
+//        }
     }
 
     public function setConfiguration(ConfigurationInterface $configuration): void
