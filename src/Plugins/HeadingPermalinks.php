@@ -21,7 +21,7 @@ class HeadingPermalinks extends Plugin
                 'min_heading_level' => 1,
                 'max_heading_level' => 6,
                 'title' => 'Permalink',
-                'symbol' => 'X',
+                'symbol' => '#',
             ],
         ];
     }
