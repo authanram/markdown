@@ -14,5 +14,5 @@ it('applies default attributes', function () {
         ->findOne($this->converter->getDocument())
         ->data->get('attributes.class');
 
-    expect($classAttribute)->toEqual('heading');
+    expect($classAttribute)->toContain('heading');
 });

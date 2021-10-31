@@ -21,11 +21,9 @@ final class ApplyAttributesMapProcessor implements ConfigurationAwareInterface
             return;
         }
 
-        (new Query)->where();
+        //(new Query)->where();
 
-        dd($event->getDocument()->firstChild());
-
-        $event->getDocument();
+        //dump($event->getDocument()->firstChild());
 
         $event->getDocument();
     }
