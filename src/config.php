@@ -15,12 +15,14 @@ return [
             Plugins\AutoLinks::class,
             Plugins\DefaultAttributes::class,
             Plugins\DescriptionLists::class,
+            Plugins\DisallowedRawHtml::class,
             Plugins\ExternalLinks::class,
             Plugins\FootNote::class,
             Plugins\FrontMatter::class,
             Plugins\HeadingAnchors::class,
             Plugins\HeadingPermalinks::class,
             Plugins\Mentions::class,
+            Plugins\SvgIcons::class,
             Plugins\TaskList::class,
         ],
     ],
@@ -39,7 +41,7 @@ return [
         'unordered_list_markers' => ['-', '*', '+'],
     ],
 
-    'html_input' => 'escape',
+    'html_input' => 'allow',
 
     'allow_unsafe_links' => false,
 
