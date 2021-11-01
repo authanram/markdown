@@ -22,9 +22,7 @@ class DefaultAttributes extends Plugin
             'default_attributes' => [
                 Heading::class => [
                     'class' => static function (Heading $node) {
-                        return $node->getLevel() === 1
-                            ? 'heading title-main'
-                            : 'heading';
+                        return 'heading';
                     },
                 ],
 //                Table::class => [
