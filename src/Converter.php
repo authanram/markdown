@@ -9,6 +9,7 @@ use League\CommonMark\Environment\Environment;
 use League\CommonMark\Environment\EnvironmentBuilderInterface;
 use League\CommonMark\Environment\EnvironmentInterface;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
+use League\CommonMark\Extension\CommonMark\Node\Block\Heading;
 use League\CommonMark\Extension\FrontMatter\Output\RenderedContentWithFrontMatter as WithFrontMatter;
 use League\CommonMark\MarkdownConverter;
 use League\CommonMark\Node\Block\Document;
@@ -57,6 +58,15 @@ class Converter extends MarkdownConverter
     public function getIndex(): array
     {
         return $this->getFrontMatter()['index'] ?? [];
+    }
+
+    public function getTitle(): string
+    {
+        /** @var Heading $heading */
+        $node = $this->query()->where($this->query()::type(Heading::class))
+            ->findOne($this->renderedContent->getDocument());
+
+        return $node?->firstChild()?->next()?->getLiteral() ?? 'Docs';
     }
 
     public function toHtml(): string
