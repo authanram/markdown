@@ -15,8 +15,8 @@ class HeadingPermalinks extends Plugin
         return [
             'heading_permalink' => [
                 'html_class' => 'heading-permalink',
-                'id_prefix' => 'content',
-                'fragment_prefix' => 'content',
+                'id_prefix' => '',
+                'fragment_prefix' => '',
                 'insert' => 'before',
                 'min_heading_level' => 1,
                 'max_heading_level' => 6,
