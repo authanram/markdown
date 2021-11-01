@@ -21,7 +21,7 @@ class DefaultAttributes extends Plugin
         return [
             'default_attributes' => [
                 Heading::class => [
-                    'class' => static function (Heading $node) {
+                    'class' => static function (/*Heading $node*/) {
                         return 'heading';
                     },
                 ],
