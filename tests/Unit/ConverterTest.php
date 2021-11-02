@@ -8,6 +8,10 @@ beforeEach(function () {
     $this->converter = converter('front-matter');
 });
 
+it('throws if front matter home is not present', function () {
+    $this->converter->getHome();
+})->expectExceptionMessage('Front Matter [home] must not be empty.');
+
 it('resolves the document', function () {
     $document = $this->converter->getDocument();
 

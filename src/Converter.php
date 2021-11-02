@@ -54,19 +54,28 @@ class Converter extends MarkdownConverter
             : null;
     }
 
+    public function getHome(): string
+    {
+        $home = $this->getFrontMatter()['home'] ?? null;
+
+        Assert::stringNotEmpty($home, 'Front Matter [home] must not be empty.');
+
+        return $home;
+    }
+
     /** @return array<string> */
     public function getIndex(): array
     {
         return $this->getFrontMatter()['index'] ?? [];
     }
 
-    public function getTitle(): string
+    public function getTitle(): string|null
     {
         /** @var Heading $heading */
         $node = $this->query()->where($this->query()::type(Heading::class))
             ->findOne($this->renderedContent->getDocument());
 
-        return $node?->firstChild()?->next()?->getLiteral() ?? 'Docs';
+        return $node?->firstChild()?->next()?->getLiteral();
     }
 
     public function toHtml(): string

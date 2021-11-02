@@ -16,5 +16,5 @@ it('renders auto-links', function () {
         ->findAll($converter->getDocument());
 
     expect($converter->map($nodes, fn ($i) => $i))
-        ->toHaveCount(6);
+        ->toHaveCount(4);
 });
