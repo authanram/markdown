@@ -14,14 +14,14 @@ class HeadingPermalinks extends Plugin
     {
         return [
             'heading_permalink' => [
-                'html_class' => 'heading-permalink',
+                'html_class' => 'permalink',
                 'id_prefix' => '',
                 'fragment_prefix' => '',
                 'insert' => 'before',
                 'min_heading_level' => 1,
-                'max_heading_level' => 6,
+                'max_heading_level' => 4,
                 'title' => 'Permalink',
-                'symbol' => '#',
+                'symbol' => '',
             ],
         ];
     }
