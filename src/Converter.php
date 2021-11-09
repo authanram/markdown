@@ -25,9 +25,14 @@ class Converter extends MarkdownConverter
      *
      * @noinspection PhpDocSignatureIsNotCompleteInspection
      */
-    public function __construct(private string $markdown, array $config = [])
-    {
+    public function __construct(
+        private string $markdown,
+        array $config,
+        string $baseUrl
+    ) {
         $converterConfig = $config['converter'];
+
+        $converterConfig['base_url'] = $baseUrl;
 
         static::authorize($converterConfig);
 

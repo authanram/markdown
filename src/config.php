@@ -7,8 +7,6 @@ use Authanram\Markdown\Plugins;
 return [
 
     'converter' => [
-        'base_url' => 'https://docs.test/docs',
-
         'plugins' => [
             Plugins\Attributes::class,
             Plugins\AutoLinks::class,
