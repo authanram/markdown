@@ -83,9 +83,15 @@ class Converter extends MarkdownConverter
         return $node?->firstChild()?->next()?->getLiteral();
     }
 
-    public function toHtml(): string
+    public function toHtml(array $replace = []): string
     {
-        return $this->renderedContent->getContent();
+        $html = $this->renderedContent->getContent();
+
+        foreach ($replace as $searchFor => $replaceWith) {
+            $html = str_replace($searchFor, $replaceWith, $html);
+        }
+
+        return $html;
     }
 
     public function query(): Query
