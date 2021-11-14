@@ -25,11 +25,8 @@ class Converter extends MarkdownConverter
      *
      * @noinspection PhpDocSignatureIsNotCompleteInspection
      */
-    public function __construct(
-        private string $markdown,
-        array $config,
-        string $baseUrl
-    ) {
+    public function __construct(array $config, string $baseUrl)
+    {
         $converterConfig = $config['converter'];
 
         $converterConfig['base_url'] = $baseUrl;
@@ -42,8 +39,13 @@ class Converter extends MarkdownConverter
         );
 
         parent::__construct($environment);
+    }
 
-        $this->renderedContent = $this->convertToHtml($this->markdown);
+    public function withMarkdown(string $markdown): self
+    {
+        $this->renderedContent = $this->convertToHtml($markdown);
+
+        return $this;
     }
 
     public function getDocument(): Document
