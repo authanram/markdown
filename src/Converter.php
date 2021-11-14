@@ -25,17 +25,18 @@ class Converter extends MarkdownConverter
      *
      * @noinspection PhpDocSignatureIsNotCompleteInspection
      */
-    public function __construct(array $config, string $baseUrl)
+    public function __construct(array $config)
     {
-        $converterConfig = $config['converter'];
+        $config = array_merge_recursive(
+            (array)require __DIR__.'/../src/config.php',
+            $config,
+        );
 
-        $converterConfig['base_url'] = $baseUrl;
-
-        static::authorize($converterConfig);
+        static::assert($config['converter']);
 
         $environment = $this->addPlugins(
-            new Environment($this->mergePluginConfigs($converterConfig)),
-            $converterConfig['plugins'],
+            new Environment($this->mergePluginConfigs($config['converter'])),
+            $config['converter']['plugins'],
         );
 
         parent::__construct($environment);
@@ -143,7 +144,7 @@ class Converter extends MarkdownConverter
     }
 
     /** @param array<string> $config */
-    private static function authorize(array $config): void
+    private static function assert(array $config): void
     {
         Assert::url($config['base_url'] ?? '');
 

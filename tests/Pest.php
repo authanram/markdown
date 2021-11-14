@@ -6,8 +6,9 @@ use Authanram\Markdown\Converter;
 
 function converter(string $basename): Converter
 {
-    return (new Converter(
-        require __DIR__.'/../src/config.php',
-        'https://docs.test/docs',
-    ))->withMarkdown(file_get_contents(__DIR__.'/TestFiles/'.$basename.'.md'));
+    $markdown = file_get_contents(__DIR__.'/TestFiles/'.$basename.'.md');
+
+    $config = ['converter' => ['base_url' => 'https://docs.test/docs']];
+
+    return (new Converter($config))->withMarkdown($markdown);
 }
