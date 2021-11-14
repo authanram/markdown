@@ -29,7 +29,7 @@ class Converter extends MarkdownConverter
     {
         $config = array_merge_recursive(
             (array)require __DIR__.'/../src/config.php',
-            $config,
+            ['converter' => $config],
         );
 
         static::assert($config['converter']);
