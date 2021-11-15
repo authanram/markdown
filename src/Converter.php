@@ -77,13 +77,14 @@ class Converter extends MarkdownConverter
         return $this->getFrontMatter()['index'] ?? [];
     }
 
+    public function getBanner(): string|null
+    {
+        return $this->getFrontMatter()['banner'] ?? null;
+    }
+
     public function getTitle(): string|null
     {
-        /** @var Heading $heading */
-        $node = $this->query()->where($this->query()::type(Heading::class))
-            ->findOne($this->renderedContent->getDocument());
-
-        return $node?->firstChild()?->next()?->getLiteral();
+        return $this->getFrontMatter()['title'] ?? null;
     }
 
     public function toHtml(array $replace = []): string
