@@ -5,17 +5,18 @@
     "license": "MIT",
     "require": {
         "php": "^8.0",
-        "illuminate/support": "^8.68.1",
-        "league/commonmark": "^2.0.2",
-        "symfony/yaml": "^5.3.6",
-        "webmozart/assert": "^1.10.0"
+        "illuminate/support": "^9.0",
+        "league/commonmark": "^2.0",
+        "symfony/yaml": "^5.3",
+        "webmozart/assert": "^1.10"
     },
     "require-dev": {
-        "nunomaduro/phpinsights": "^2.0.1",
-        "pestphp/pest": "^1.20.0",
-        "pestphp/pest-plugin-mock": "^1.0.3",
+        "fakerphp/faker": "^1.17",
+        "nunomaduro/phpinsights": "^2.1",
+        "pestphp/pest": "^1.21",
+        "pestphp/pest-plugin-mock": "^1.0",
         "pestphp/pest-plugin-watch": "1.x-dev",
-        "spatie/ray": "^1.30.3"
+        "spatie/ray": "^1.33"
     },
     "autoload": {
         "psr-4": {
@@ -30,7 +31,11 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
