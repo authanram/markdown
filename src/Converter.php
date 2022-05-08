@@ -44,7 +44,7 @@ class Converter extends MarkdownConverter
 
     public function withMarkdown(string $markdown): self
     {
-        $this->renderedContent = $this->convertToHtml($markdown);
+        $this->renderedContent = $this->convert($markdown);
 
         return $this;
     }
