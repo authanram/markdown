@@ -3,6 +3,8 @@
 [WIP] Converts markdown into HTML.
 
 ```php
+use Authanram\Markdown\Converter;
+
 $html = (new Converter([
     'base_url' => 'https://base-url.test',
 ]))->withMarkdown($markdown)->toHtml();
