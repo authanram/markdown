@@ -6,7 +6,7 @@
     "require": {
         "php": "^8.0",
         "illuminate/support": "^9.11",
-        "league/commonmark": "2.3",
+        "league/commonmark": "^2.3.4",
         "symfony/yaml": "^6.0",
         "webmozart/assert": "^1.10"
     },
