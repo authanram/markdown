@@ -1,5 +1,7 @@
 # Markdown
 
+[![CI](https://github.com/authanram/markdown/actions/workflows/main.yml/badge.svg)](https://github.com/authanram/markdown/actions/workflows/main.yml)
+
 [WIP] Converts markdown into HTML.
 
 ```php
