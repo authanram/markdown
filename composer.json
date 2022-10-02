@@ -1,7 +1,7 @@
 {
     "name": "authanram/markdown",
     "type": "package",
-    "description": "...",
+    "description": "WORK IN PROGRESS",
     "license": "MIT",
     "require": {
         "php": "^8.0",
